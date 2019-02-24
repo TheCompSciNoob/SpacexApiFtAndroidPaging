@@ -26,7 +26,7 @@ class SpacexLaunchAdapter : PagedListAdapter<Launch, RecyclerView.ViewHolder>(DI
 
 private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Launch>() {
     override fun areItemsTheSame(oldItem: Launch, newItem: Launch): Boolean {
-        return oldItem == newItem
+        return oldItem.flight_number == newItem.flight_number
     }
 
     override fun areContentsTheSame(oldItem: Launch, newItem: Launch): Boolean {
