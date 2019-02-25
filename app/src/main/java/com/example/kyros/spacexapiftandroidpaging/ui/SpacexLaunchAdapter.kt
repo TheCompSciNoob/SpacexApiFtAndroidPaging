@@ -16,7 +16,7 @@ class SpacexLaunchAdapter : PagedListAdapter<Launch, RecyclerView.ViewHolder>(DI
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val launch: Launch = getItem(position) ?: throw IllegalStateException("Launch at position $position is null.")
+        val launch: Launch = getItem(position) ?: throw IllegalStateException("Launch at position $position is null. May have enabled placeholders?")
         with(holder.itemView) {
             val launchNameTextView: TextView = findViewById(android.R.id.text1)
             launchNameTextView.text = launch.mission_name
